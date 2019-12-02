@@ -16,7 +16,7 @@ class WelcomeNewCustomerListener implements ShouldQueue
      */
     public function handle($event)
     {
-        sleep(5);
+        sleep(10);
 
         Mail::to($event->customer->email)->send(new WelcomeNewUserMail());
     }
