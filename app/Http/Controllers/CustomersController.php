@@ -8,11 +8,16 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
+
     public function index()
     {
     	$customers = Customer::all();
 
-		return view('customers.index', compact('customers'));
+		  return view('customers.index', compact('customers'));
     }
 
     public function create()
